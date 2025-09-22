@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import Highlight from './components/Highlight'
@@ -5,16 +6,34 @@ import Testimonials from './components/Testimonials'
 import About from './components/About'
 import Footer from './components/Footer'
 
+import Menu from './components/Menu';
+import Reservations from './components/Reservations';
+import OrderOnline from './components/OrderOnline';
+import Login from './components/Login';
+
 function App() {
 
   return (
     <>
-      <Header></Header>
-      <HeroSection></HeroSection>
-      {/* <Highlight></Highlight>
-      <Testimonials></Testimonials>
-      <About></About>
-      <Footer></Footer> */}
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <HeroSection></HeroSection>
+              <Highlight></Highlight>
+            </>
+          } />
+          <Route path="/about" element={<About />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/reservations" element={<Reservations />} />
+          <Route path="/order_online" element={<OrderOnline />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        {/* <Testimonials></Testimonials>
+        <Information></Information>
+        <Footer></Footer> */}
+      </Router>
     </>
   )
 }

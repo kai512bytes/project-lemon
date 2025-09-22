@@ -7198,13 +7198,12 @@ progress {
 
 /*# sourceMappingURL=custom.css.map */
 
-/*custom css*/
-.btn-lg-50 {
-  width: auto; /* 預設（小於 lg 時） */
+.btn-xs-50{
+  width: auto;
 }
 
-@media (min-width: 992px) { /* lg 以上 */
-  .btn-lg-50 {
+@media (min-width: 425px) { /* lg 以上 */
+  .btn-xs-50 {
     width: 50%;
   }
 }

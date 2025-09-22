@@ -1,11 +1,34 @@
+import { Component } from "react";
 import logo from "../assets/logo/logo.png";
 import {Container, Nav, Navbar, NavDropdown, Row} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
+    const navElements = [
+        {
+            name: "Home", link:"/"
+        },
+        {
+            name: "About", link:"/about"
+        },
+        {
+            name: "Menu", link:"/menu"
+        },
+        {
+            name: "Reservations", link:"/reservations"
+        },
+        {
+            name: "Order online", link:"/order_online"
+        },
+        {
+            name: "Login", link:"/login"
+        },
+    ]
+
     return(
         <header>
             <Navbar expand="lg" className="py-3">
-                <Container fluid="lg" className="mx-auto">
+                <Container fluid="xxl" className="px-5">
                     <Navbar.Brand href="#" className="mx-0">
                         <img
                             src={logo}
@@ -17,17 +40,14 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="navbar-nav" />
                     <Navbar.Collapse id="navbar-nav" className="justify-content-end">
                         <Nav className="gap-2 align-items-center">
-                            <Nav.Link href="#">Home</Nav.Link>
-                            <Nav.Link href="#">About</Nav.Link>
-                            <Nav.Link href="#">Menu</Nav.Link>
-                            <Nav.Link href="#">Reservations</Nav.Link>
-                            <Nav.Link href="#">Order online</Nav.Link>
-                            <Nav.Link href="#">Login</Nav.Link>
+                            {navElements.map(({name, link}) => (
+                                <Nav.Item key={name}>
+                                    <Nav.Link as={Link} to={link} className="fw-medium">{name}</Nav.Link>
+                                </Nav.Item>
+                            ))}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
-
-
             </Navbar>
         </header>
     )
