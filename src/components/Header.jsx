@@ -4,9 +4,9 @@ import {Container, Nav, Navbar, NavDropdown, Row} from 'react-bootstrap';
 const Header = () => {
     return(
         <header>
-            <Navbar expand="lg" className="bg-body-secondary" variant="light">
-                <Container fluid="xl" className="justify-content-center p-0">
-                    <Navbar.Brand href="#">
+            <Navbar expand="lg" className="py-3">
+                <Container fluid="lg" className="mx-auto">
+                    <Navbar.Brand href="#" className="mx-0">
                         <img
                             src={logo}
                             width="auto"
@@ -15,11 +15,9 @@ const Header = () => {
                         />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbar-nav" />
-                </Container>
-                <Container className=" justify-content-start p-0">
-                    <Navbar.Collapse id="navbar-nav" className="justify-content-start">
+                    <Navbar.Collapse id="navbar-nav" className="justify-content-end">
                         <Nav className="gap-2 align-items-center">
-                            <Nav.Link href="#" className="text-primary">Home</Nav.Link>
+                            <Nav.Link href="#">Home</Nav.Link>
                             <Nav.Link href="#">About</Nav.Link>
                             <Nav.Link href="#">Menu</Nav.Link>
                             <Nav.Link href="#">Reservations</Nav.Link>
@@ -28,6 +26,8 @@ const Header = () => {
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
+
+
             </Navbar>
         </header>
     )
