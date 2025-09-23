@@ -28,7 +28,7 @@ const Header = () => {
     return(
         <header>
             <Navbar expand="lg" className="py-3">
-                <Container fluid="xxl" className="px-5">
+                <Container className="px-5 content-w-f" fluid="lg">
                     <Navbar.Brand href="#" className="mx-0">
                         <img
                             src={logo}
@@ -42,7 +42,7 @@ const Header = () => {
                         <Nav className="gap-2 align-items-center">
                             {navElements.map(({name, link}) => (
                                 <Nav.Item key={name}>
-                                    <Nav.Link as={Link} to={link} className="fw-medium">{name}</Nav.Link>
+                                    <Nav.Link as={Link} to={link} className="fw-medium karla-context">{name}</Nav.Link>
                                 </Nav.Item>
                             ))}
                         </Nav>

@@ -7198,12 +7198,29 @@ progress {
 
 /*# sourceMappingURL=custom.css.map */
 
-.btn-xs-50{
-  width: auto;
+
+.content-w-f{
+  max-width: auto;
 }
 
-@media (min-width: 425px) { /* lg 以上 */
-  .btn-xs-50 {
-    width: 50%;
+@media (min-width: 992px){
+  .content-w-f{
+    max-width: 960px;
   }
+}
+
+
+.karla-context {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.markazi-text-context {
+  font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }

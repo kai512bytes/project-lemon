@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 
-const SectionGeneric = ({children, bgColor, height}) => {
+const SectionGeneric = ({children, bgColor = bg-white, height}) => {
     return(
         <Container
             as="section"
