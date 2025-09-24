@@ -3,10 +3,11 @@ import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import Highlight from './components/Highlight'
 import Testimonials from './components/Testimonials'
-import About from './components/About'
+import Information from './components/Information'
 import Footer from './components/Footer'
 
 import Menu from './components/Menu';
+import About from './components/About'
 import Reservations from './components/Reservations';
 import OrderOnline from './components/OrderOnline';
 import Login from './components/Login';
@@ -20,8 +21,10 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
-              <HeroSection></HeroSection>
-              <Highlight></Highlight>
+              <HeroSection />
+              <Highlight />
+              <Testimonials />
+              <Information />
             </>
           } />
           <Route path="/about" element={<About />} />

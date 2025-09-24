@@ -28,7 +28,7 @@ const Header = () => {
     return(
         <header>
             <Navbar expand="lg" className="py-3">
-                <Container className="px-5 content-w-f" fluid="lg">
+                <Container fluid="lg" className="text-white px-2 content-w-f">
                     <Navbar.Brand href="#" className="mx-0">
                         <img
                             src={logo}
@@ -39,7 +39,7 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbar-nav" />
                     <Navbar.Collapse id="navbar-nav" className="justify-content-end">
-                        <Nav className="gap-2 align-items-center">
+                        <Nav className="gap-2">
                             {navElements.map(({name, link}) => (
                                 <Nav.Item key={name}>
                                     <Nav.Link as={Link} to={link} className="fw-medium karla-context">{name}</Nav.Link>

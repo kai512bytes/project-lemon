@@ -7209,6 +7209,10 @@ progress {
   }
 }
 
+.h-35{
+  max-height: 35%;
+}
+
 
 .karla-context {
   font-family: "Karla", sans-serif;

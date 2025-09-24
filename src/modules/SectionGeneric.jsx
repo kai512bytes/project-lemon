@@ -1,15 +1,16 @@
 import { Container } from "react-bootstrap";
 
-const SectionGeneric = ({children, bgColor = bg-white, height}) => {
+const SectionGeneric = ({children, bgColor = "bg-white", height = "auto"}) => {
     return(
-        <Container
-            as="section"
-            fluid
-            className={`${bgColor} text-white px-0`}
-            style={{height: `${height}px`}}
-        >
-            {children}
-        </Container>
+        <section className= {`${bgColor}`}>
+            <Container
+                fluid="lg"
+                className={`text-white px-2 content-w-f`}
+                style={{height: `${height}px`}}
+            >
+                {children}
+            </Container>
+        </section>
     )
 }
 
