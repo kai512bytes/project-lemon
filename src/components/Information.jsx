@@ -6,7 +6,7 @@ import infoImg2 from '../assets/Img/Mario and Adrian b.jpg';
 
 export default function Information() {
     return(
-        <SectionGeneric height={600}>
+        <SectionGeneric height="500px">
             <Container fluid="lg" className="h-100 text-black px-2 content-w-f">
                 <Row className="h-100 d-flex flex-row">
                     <Col className="h-100 d-flex flex-column justify-content-center gap-5">
