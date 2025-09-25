@@ -25,6 +25,7 @@ function App() {
               <Highlight />
               <Testimonials />
               <Information />
+              <Footer />
             </>
           } />
           <Route path="/about" element={<About />} />
@@ -33,9 +34,6 @@ function App() {
           <Route path="/order_online" element={<OrderOnline />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-        {/* <Testimonials></Testimonials>
-        <Information></Information>
-        <Footer></Footer> */}
       </Router>
     </>
   )
