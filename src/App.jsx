@@ -20,13 +20,12 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={
-            <>
+            <main>
               <HeroSection />
               <Highlight />
               <Testimonials />
               <Information />
-              <Footer />
-            </>
+            </main>
           } />
           <Route path="/about" element={<About />} />
           <Route path="/menu" element={<Menu />} />
@@ -34,6 +33,7 @@ function App() {
           <Route path="/order_online" element={<OrderOnline />} />
           <Route path="/login" element={<Login />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   )

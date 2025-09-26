@@ -5,7 +5,7 @@ import HeroImg from "../assets/Img/HeroSectionImg.jpg";
 export default function HeroSection() {
     return(
         <SectionGeneric bgColor="bg-primary-green" height={420}>
-            <Container fluid="lg" className={`text-black px-2 content-w-f`}>
+            <Container fluid="lg" className={`text-white px-2 content-w-f`}>
                 <Row className="py-5">
                     <Col
                         className="d-flex flex-column justify-content-start align-items-start gap-5"

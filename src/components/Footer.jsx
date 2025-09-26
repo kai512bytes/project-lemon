@@ -1,9 +1,67 @@
-import SectionGeneric from "../modules/SectionGeneric"
+import { Container, Row, Col, } from "react-bootstrap";
+import SectionGeneric from "../modules/SectionGeneric";
+import logo from '../assets/logo/Asset 20@4x.png';
+import navElements from "./navElements";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
+
+    const socials = [
+        {
+            icon: <i className="bi bi-instagram"></i>, url: 'https://www.instagram.com/kai_po_hung/'
+        },
+        {
+            icon: <i className="bi bi-linkedin"></i>, url: 'https://www.linkedin.com/in/pokai-hung-a01740325/'
+        },
+        {
+            icon: <i className="bi bi-youtube"></i>, url: 'https://youtube.com/@kai_collectionsofreactions?si=iMGA5-ZF-lA0iSDl'
+        },
+        {
+            icon: <i className="bi bi-line"></i>, url: '#'
+        }
+    ]
+
     return(
-        <SectionGeneric>
-            
+        <SectionGeneric height="420px">
+            <Container fluid="lg" className="h-100 text-black px-2 content-w-f d-flex align-items-center">
+                <Row className="w-100 d-flex justify-content-between gap-5">
+                    <Col>
+                        <img src={logo} alt="logo" style={{height: '300px'}} className="object-fit-cover" />
+                    </Col>
+                    <Col className="d-flex flex-column gap-2">
+                        <Row><h5>Doormat Navigation</h5></Row>
+                        <Row>
+                            {navElements.map(({name, link}) => (
+                                <Row>
+                                    <Link key={name} to={link}
+                                        className="fw-medium karla-context text-black text-decoration-none"
+                                    >
+                                        {name}
+                                    </Link>
+                                </Row>
+                            ))}
+                        </Row>
+                    </Col>
+                    <Col className="d-flex flex-column gap-4">
+                        <Row><h5 className="d-inline-block">Contact</h5></Row>
+                        <Row>
+                            <Row><p>Address</p></Row>
+                            <Row><p>Phone number</p></Row>
+                            <Row><p>Email</p></Row>
+                        </Row>
+                    </Col>
+                    <Col className="d-flex flex-column gap-4">
+                        <Row><h5>Social Media Links</h5></Row>
+                        <Row className="gap-2">
+                            {socials.map(({icon, url}) => (
+                                <Row>
+                                    <a key={url} href={url} target="_blank" rel="noopener noreferrer">{icon}</a>
+                                </Row>
+                            ))}
+                        </Row>
+                    </Col>
+                </Row>
+            </Container>
         </SectionGeneric>
     )
 }

@@ -2,29 +2,9 @@ import { Component } from "react";
 import logo from "../assets/logo/logo.png";
 import {Container, Nav, Navbar, NavDropdown, Row} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import navElements from './navElements.jsx';
 
 const Header = () => {
-    const navElements = [
-        {
-            name: "Home", link:"/"
-        },
-        {
-            name: "About", link:"/about"
-        },
-        {
-            name: "Menu", link:"/menu"
-        },
-        {
-            name: "Reservations", link:"/reservations"
-        },
-        {
-            name: "Order online", link:"/order_online"
-        },
-        {
-            name: "Login", link:"/login"
-        },
-    ]
-
     return(
         <header>
             <Navbar expand="lg" className="py-3">
