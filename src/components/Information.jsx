@@ -22,13 +22,13 @@ export default function Information() {
                             </p>
                         </Row>
                     </Col>
-                    <Col className="d-flex align-items-center">
-                        <div className="position-relative start-50">
+                    <Col className="d-flex align-items-start">
+                        <div className="position-relative start-50 align-self-center">
                             <img src={infoImg} style={{width: '200px', height: '250px', objectPosition: 'top'}}
-                                className="position-absolute object-fit-cover border translate-middle rounded z-1"/
+                                className="position-absolute object-fit-cover border rounded translate-middle z-1"/
                             >
                             <img src={infoImg2} style={{width: '200px', height: '250px', objectPosition: 'bottom'}}
-                                className="position-absolute object-fit-cover border rounded  z-0"/
+                                className="position-absolute object-fit-cover border rounded z-0"/
                             >
                         </div>
                     </Col>

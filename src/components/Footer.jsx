@@ -1,4 +1,5 @@
-import { Container, Row, Col, } from "react-bootstrap";
+import { useState } from "react";
+import { Container, Row, Col, Button, Collapse } from "react-bootstrap";
 import SectionGeneric from "../modules/SectionGeneric";
 import logo from '../assets/logo/Asset 20@4x.png';
 import navElements from "./navElements";
@@ -22,15 +23,15 @@ export default function Footer() {
     ]
 
     return(
-        <SectionGeneric height="420px">
+        <SectionGeneric height="420px" bgColor="bg-secondary-2">
             <Container fluid="lg" className="h-100 text-black px-2 content-w-f d-flex align-items-center">
                 <Row className="w-100 d-flex justify-content-between gap-5">
-                    <Col>
-                        <img src={logo} alt="logo" style={{height: '300px'}} className="object-fit-cover" />
+                    <Col className="d-flex align-items-center">
+                        <img src={logo} alt="logo" style={{minHeight: '100px'}} className="img-fluid object-fit-cover" />
                     </Col>
                     <Col className="d-flex flex-column gap-2">
                         <Row><h5>Doormat Navigation</h5></Row>
-                        <Row>
+                        <Row className="gap-3">
                             {navElements.map(({name, link}) => (
                                 <Row>
                                     <Link key={name} to={link}
@@ -42,17 +43,21 @@ export default function Footer() {
                             ))}
                         </Row>
                     </Col>
-                    <Col className="d-flex flex-column gap-4">
-                        <Row><h5 className="d-inline-block">Contact</h5></Row>
+                    <Col className="d-flex flex-column gap-2">
+                        <Row>
+                            <h5 className="pb-4">Contact</h5>
+                        </Row>
                         <Row>
                             <Row><p>Address</p></Row>
                             <Row><p>Phone number</p></Row>
                             <Row><p>Email</p></Row>
                         </Row>
                     </Col>
-                    <Col className="d-flex flex-column gap-4">
-                        <Row><h5>Social Media Links</h5></Row>
-                        <Row className="gap-2">
+                    <Col className="d-flex flex-column gap-2">
+                        <Row>
+                            <h5 className="pb-4">Social Media Links</h5>
+                        </Row>
+                        <Row className="gap-3">
                             {socials.map(({icon, url}) => (
                                 <Row>
                                     <a key={url} href={url} target="_blank" rel="noopener noreferrer">{icon}</a>

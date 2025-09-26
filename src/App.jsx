@@ -33,7 +33,8 @@ function App() {
           <Route path="/order_online" element={<OrderOnline />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-        <Footer />
+          <Footer />
+
       </Router>
     </>
   )

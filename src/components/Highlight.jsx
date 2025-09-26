@@ -13,8 +13,8 @@ export default function Highlight() {
     ]
 
     return(
-        <SectionGeneric height={685}>
-            <Container className="d-flex flex-column gap-5 px-2 py-5 my-5 content-w-f" fluid="lg">
+        <SectionGeneric height= "800px">
+            <Container className="d-flex flex-column justify-content-around gap-5 px-2 my-5 content-w-f">
                 <Row>
                     <Col className="d-flex justify-content-start">
                         <h1 className="display-4 text-black markazi-text-context">This weeks specials !</h1>

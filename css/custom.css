@@ -7200,13 +7200,7 @@ progress {
 
 
 .content-w-f{
-  max-width: auto;
-}
-
-@media (min-width: 992px){
-  .content-w-f{
-    max-width: 960px;
-  }
+  max-width: 960px;
 }
 
 .h-35{
@@ -7228,3 +7222,4 @@ progress {
   font-weight: 400;
   font-style: normal;
 }
+
