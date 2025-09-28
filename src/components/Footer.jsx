@@ -23,50 +23,52 @@ export default function Footer() {
     ]
 
     return(
-        <SectionGeneric height="420px" bgColor="bg-secondary-2">
-            <Container fluid="lg" className="h-100 text-black px-2 content-w-f d-flex align-items-center">
-                <Row className="w-100 d-flex justify-content-between gap-5">
-                    <Col className="d-flex align-items-center">
-                        <img src={logo} alt="logo" style={{minHeight: '100px'}} className="img-fluid object-fit-cover" />
-                    </Col>
-                    <Col className="d-flex flex-column gap-2">
-                        <Row><h5>Doormat Navigation</h5></Row>
-                        <Row className="gap-3">
-                            {navElements.map(({name, link}) => (
-                                <Row>
-                                    <Link key={name} to={link}
-                                        className="fw-medium karla-context text-black text-decoration-none"
-                                    >
-                                        {name}
-                                    </Link>
-                                </Row>
-                            ))}
-                        </Row>
-                    </Col>
-                    <Col className="d-flex flex-column gap-2">
-                        <Row>
-                            <h5 className="pb-4">Contact</h5>
-                        </Row>
-                        <Row>
-                            <Row><p>Address</p></Row>
-                            <Row><p>Phone number</p></Row>
-                            <Row><p>Email</p></Row>
-                        </Row>
-                    </Col>
-                    <Col className="d-flex flex-column gap-2">
-                        <Row>
-                            <h5 className="pb-4">Social Media Links</h5>
-                        </Row>
-                        <Row className="gap-3">
-                            {socials.map(({icon, url}) => (
-                                <Row>
-                                    <a key={url} href={url} target="_blank" rel="noopener noreferrer">{icon}</a>
-                                </Row>
-                            ))}
-                        </Row>
-                    </Col>
-                </Row>
-            </Container>
-        </SectionGeneric>
+        <footer>
+            <SectionGeneric height="420px" bgColor="bg-secondary-2">
+                <Container fluid="lg" className="h-100 text-black px-2 content-w-f d-flex align-items-center">
+                    <Row className="w-100 d-flex justify-content-between gap-5">
+                        <Col className="d-flex align-items-center">
+                            <img src={logo} alt="logo" style={{minHeight: '100px'}} className="img-fluid object-fit-cover" />
+                        </Col>
+                        <Col className="d-flex flex-column gap-2">
+                            <Row><h5>Doormat Navigation</h5></Row>
+                            <Row className="gap-3">
+                                {navElements.map(({name, link}) => (
+                                    <Row>
+                                        <Link key={name} to={link}
+                                            className="fw-medium karla-context text-black text-decoration-none"
+                                        >
+                                            {name}
+                                        </Link>
+                                    </Row>
+                                ))}
+                            </Row>
+                        </Col>
+                        <Col className="d-flex flex-column gap-2">
+                            <Row>
+                                <h5 className="pb-4">Contact</h5>
+                            </Row>
+                            <Row>
+                                <Row><p>Address</p></Row>
+                                <Row><p>Phone number</p></Row>
+                                <Row><p>Email</p></Row>
+                            </Row>
+                        </Col>
+                        <Col className="d-flex flex-column gap-2">
+                            <Row>
+                                <h5 className="pb-4">Social Media Links</h5>
+                            </Row>
+                            <Row className="gap-3">
+                                {socials.map(({icon, url}) => (
+                                    <Row>
+                                        <a key={url} href={url} target="_blank" rel="noopener noreferrer">{icon}</a>
+                                    </Row>
+                                ))}
+                            </Row>
+                        </Col>
+                    </Row>
+                </Container>
+            </SectionGeneric>
+        </footer>
     )
 }
