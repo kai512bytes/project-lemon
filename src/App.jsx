@@ -29,7 +29,9 @@ function App() {
           } />
           <Route path="/about" element={<About />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/reservations" element={<Reservations />} />
+          <Route path="/reservations"
+            element={<Reservations />}
+          />
           <Route path="/order_online" element={<OrderOnline />} />
           <Route path="/login" element={<Login />} />
         </Routes>
