@@ -34,13 +34,11 @@ export default function Footer() {
                             <Row><h5>Doormat Navigation</h5></Row>
                             <Row className="gap-3">
                                 {navElements.map(({name, link}) => (
-                                    <Row>
-                                        <Link key={name} to={link}
-                                            className="fw-medium karla-context text-black text-decoration-none"
-                                        >
-                                            {name}
-                                        </Link>
-                                    </Row>
+                                    <Link key={name} to={link}
+                                        className="fw-medium karla-context text-black text-decoration-none"
+                                    >
+                                        {name}
+                                    </Link>
                                 ))}
                             </Row>
                         </Col>
@@ -58,11 +56,11 @@ export default function Footer() {
                             <Row>
                                 <h5 className="pb-4">Social Media Links</h5>
                             </Row>
-                            <Row className="gap-3">
+                            <Row as="ul" className="gap-3 px-0 mb-0">
                                 {socials.map(({icon, url}) => (
-                                    <Row>
-                                        <a key={url} href={url} target="_blank" rel="noopener noreferrer">{icon}</a>
-                                    </Row>
+                                    <li key={url} style={{listStyleType: "none"}}>
+                                        <a href={url} target="_blank" rel="noopener noreferrer">{icon}</a>
+                                    </li>
                                 ))}
                             </Row>
                         </Col>
