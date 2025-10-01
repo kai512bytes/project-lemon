@@ -7,7 +7,7 @@ export default function BookingForm({availableTimes =[], OnDateChange}){
     const[date, setDate] = useState("");
     const[guests, setGuests] = useState("1")
     const[occasion, setOccasion] = useState("birthday")
-    
+
     function handleDateChange(e){
         setDate(e.target.value);
         OnDateChange();
@@ -19,6 +19,7 @@ export default function BookingForm({availableTimes =[], OnDateChange}){
             style={{maxWidth: "200px"}}q
             noValidate
         >
+            <h1 className="display-4 text-custom-color markazi-text-context mb-0">Book Now</h1>
             <Form.Group>
                 <Form.Label htmlFor="res-date">Choose date</Form.Label>
                 <Form.Control
