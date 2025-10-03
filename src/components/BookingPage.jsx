@@ -2,34 +2,37 @@ import { useEffect, useReducer } from 'react'
 import SectionGeneric from "../modules/SectionGeneric";
 import {Container} from 'react-bootstrap';
 import BookingForm from "./BookingForm";
-
-export const reducer = (state, action) =>{
-    if(action.type === "updateTimes"){
-        return {...state, availableTimes: action.availableTimes}
-    }
-    return state;
-}
+import { fetchAPI } from '../utilitis/api';
 
 export default function BookingPage() {
 
-    const[state, dispatch] = useReducer(reducer, {availableTimes: []});
-
-    const fetchTimes = async (date) => {
-        if (window.fetchAPI){
-            const newTimes = await window.fetchAPI(date);
-            dispatch({type: "updateTimes", availableTimes: newTimes})
+    const reducer = (state, action) =>{
+        if(action.type === "updateTimes"){
+            return {...state, availableTimes: action.availableTimes}
+        }
+        else{
+            throw Error('Unknown action: ' + action.type);
         }
     }
 
-    useEffect(() => {
-        fetchTimes(new Date());
-    }, []);
+    const[state, dispatch] = useReducer(reducer, null, intializeTimes);
+
+    function intializeTimes(){
+        return fetchAPI(new Date());
+    }
+
+    function updateTimes(date){
+        const times = fetchAPI(new Date(date));
+        dispatch({type: 'updateTimes', availableTimes: times})
+    }
+
+
 
     return(
         <SectionGeneric>
             <Container fluid="lg" className="text-black px-2 content-w-f w-100">
             <BookingForm
-                OnDateChange = {(date) => fetchTimes(date)}
+                OnDateChange = {updateTimes}
                 availableTimes={state.availableTimes}
             />
             </Container>

@@ -1,26 +1,25 @@
 import {Form, Button} from 'react-bootstrap';
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import React from 'react';
 
-export default function BookingForm({availableTimes, OnDateChange}){
+export default function BookingForm({availableTimes = [], OnDateChange}){
 
-    const[date, setDate] = useState("");
-    const [time, setTime] = useState({availableTimes: []});
+    const [date, setDate] = useState(() => {
+        const today = new Date();
+        return today.toISOString().split("T")[0];
+    });
+    const[time, setTime] = useState("");
     const[guests, setGuests] = useState("1");
     const[occasion, setOccasion] = useState("birthday");
+    useEffect(() => {
+        OnDateChange(date)
+    }, [date]);
 
     useEffect(() => {
-        const today = new Date();
-        const times = fetchAPI
-        setTime
+        if (availableTimes.length > 0) {
+        setTime(availableTimes[0]);
+        }
     }, [availableTimes]);
-
-    function handleDateChange(e){
-        const newDate = e.target.value;
-        setDate(newDate);
-        OnDateChange(new Date(newDate));
-    }
-
 
     return(
         <Form
@@ -36,7 +35,7 @@ export default function BookingForm({availableTimes, OnDateChange}){
                     name="res-date"
                     type="date"
                     value={date}
-                    onChange={handleDateChange}
+                    onChange={(e) => setDate(e.target.value)}
                 />
                 <Form.Control.Feedback type="invalid">Please select date</Form.Control.Feedback>
             </Form.Group>
