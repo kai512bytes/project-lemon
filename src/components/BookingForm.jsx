@@ -1,25 +1,34 @@
 import {Form, Button} from 'react-bootstrap';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from 'react';
 
-export default function BookingForm({availableTimes =[], OnDateChange}){
+export default function BookingForm({availableTimes, OnDateChange}){
 
     const[date, setDate] = useState("");
-    const[guests, setGuests] = useState("1")
-    const[occasion, setOccasion] = useState("birthday")
+    const [time, setTime] = useState({availableTimes: []});
+    const[guests, setGuests] = useState("1");
+    const[occasion, setOccasion] = useState("birthday");
+
+    useEffect(() => {
+        const today = new Date();
+        const times = fetchAPI
+        setTime
+    }, [availableTimes]);
 
     function handleDateChange(e){
-        setDate(e.target.value);
-        OnDateChange();
+        const newDate = e.target.value;
+        setDate(newDate);
+        OnDateChange(new Date(newDate));
     }
+
 
     return(
         <Form
             className="d-flex flex-column gap-4 mx-auto my-5"
-            style={{maxWidth: "200px"}}q
+            style={{maxWidth: "200px"}}
             noValidate
         >
-            <h1 className="display-4 text-custom-color markazi-text-context mb-0">Book Now</h1>
+            <h1 className="display-4 text-primary-green markazi-text-context mb-0">Book Now</h1>
             <Form.Group>
                 <Form.Label htmlFor="res-date">Choose date</Form.Label>
                 <Form.Control
@@ -36,6 +45,8 @@ export default function BookingForm({availableTimes =[], OnDateChange}){
                 <Form.Select
                     id="res-time"
                     name="res-time"
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
                 >
                     {availableTimes.map((time) => (
                         <option key={time} value={time}>{time}</option>

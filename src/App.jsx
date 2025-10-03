@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 
 import Menu from './components/Menu';
 import About from './components/About'
-import Reservations from './components/Reservations';
+import BookingPage from './components/BookingPage';
 import OrderOnline from './components/OrderOnline';
 import Login from './components/Login';
 
@@ -30,7 +30,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/reservations"
-            element={<Reservations />}
+            element={<BookingPage />}
           />
           <Route path="/order_online" element={<OrderOnline />} />
           <Route path="/login" element={<Login />} />
